@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64 URL Decoder</title>
+    <script>
+        function openDecodedUrl() {
+            var base64Input = document.getElementById("base64Input").value;
+
+            try {
+                var decodedUrl = atob(base64Input);
+
+                window.open(decodedUrl, "_blank");
+            } catch (error) {
+                alert("输入的图片地址无效，请重新输入！");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Necron BOT 背景图审核工具</h1>
+    <p>请输入机器人发送给你的图片地址：</p>
+    <input type="text" id="base64Input" placeholder="输入机器人发送给你的图片地址" style="width: 300px;">
+    <button onclick="openDecodedUrl()">打开图片</button>
+</body>
+</html>
